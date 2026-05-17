@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { Customer, CustomerDropDown } from '../models/CustomerModel';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class CustomerService {
-  private apiUrl = 'http://localhost:5156/api/customer'; // adjust port
+  private baseUrl = environment.apiUrl;
+  private apiUrl = `${this.baseUrl}/api/customer`;
 
   constructor(private http: HttpClient) {}
 

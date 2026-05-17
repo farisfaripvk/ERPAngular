@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5156/api/auth/login'; // adjust port
+  private baseUrl = environment.apiUrl; // e.g., 'http://localhost:5156' or live URL
+  private apiUrl = `${this.baseUrl}/api/auth/login`; // Full endpoint
   private isLoggedIn = false;
 
   constructor(

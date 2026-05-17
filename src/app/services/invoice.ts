@@ -2,10 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { SalesInvoice, InvoiceDetail, InvoiceReportItem } from '../models/sales-invoicemodel';
+import { environment } from '../../environments/environment'; // Adjust path if needed
 
 @Injectable({ providedIn: 'root' })
 export class InvoiceService {
-  private apiUrl = 'http://localhost:5156/api/salesinvoice';
+  // private apiUrl = 'http://localhost:5156/api/salesinvoice';
+  private baseUrl = environment.apiUrl; // e.g., 'http://localhost:5156' or live URL
+  private apiUrl = `${this.baseUrl}/api/salesinvoice`; // Full endpoint
 
   constructor(private http: HttpClient) {}
 
