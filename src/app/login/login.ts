@@ -42,7 +42,7 @@ import { AuthService } from '../services/auth';
           <button type="submit" class="login-btn">Login</button>
         </form>
         <div class="demo-cred">
-          <p>Demo credentials: <strong>faris / faris</strong></p>
+          <p>Demo credentials: <strong> Edited faris / faris</strong></p>
         </div>
       </div>
     </div>
